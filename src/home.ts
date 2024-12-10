@@ -1,3 +1,1 @@
-export class Home {
-  public message = "home";
-}
+export class Home {}

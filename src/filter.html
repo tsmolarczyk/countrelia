@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-72">
+  <div class="relative mr-8">
     <button
       click.trigger="toggleDropdown()"
       class="bg-white rounded-lg flex items-center justify-between w-72 px-4 py-2"
@@ -8,7 +8,7 @@
       <i class="fa-solid fa-chevron-down"></i>
     </button>
 
-    <div if.bind="isOpen" class="absolute w-72 bg-white rounded-lg">
+    <div if.bind="isOpen" class="absolute w-72 bg-white rounded-lg shadow-lg">
       <div
         click.trigger="selectRegion(region)"
         class="hover:bg-gray-100 cursor-pointer px-4 py-2"

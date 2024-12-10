@@ -1,6 +1,13 @@
 <template>
-  <h1>${message}</h1>
-  <li>
-    <h1>Home</h1>
-  </li>
+  <require from="navbar"></require>
+  <require from="search-bar"></require>
+  <require from="filter"></require>
+  <require from="country-list"></require>
+
+  <navbar></navbar>
+  <div class="flex w-full justify-between h-full my-5 mx-4">
+    <search-bar></search-bar>
+    <filter></filter>
+  </div>
+  <country-list></country-list>
 </template>

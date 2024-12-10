@@ -5,7 +5,6 @@ export class Filter {
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
-    console.log(this.isOpen);
   }
 
   selectRegion(region) {

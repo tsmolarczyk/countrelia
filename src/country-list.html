@@ -1,0 +1,10 @@
+<template>
+  <require from="country"></require>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-5"
+  >
+    <div class="" repeat.for="country of countryData">
+      <country country.bind="country"></country>
+    </div>
+  </div>
+</template>

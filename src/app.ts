@@ -5,6 +5,7 @@ export class App {
   public message = "Hello";
   public router: Router;
 
+
   configureRouter(config: RouterConfiguration, router: Router): void {
     this.router = router;
 

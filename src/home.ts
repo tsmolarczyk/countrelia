@@ -5,12 +5,12 @@ import { CountryList } from "country-list";
 
 @inject(CountryService)
 export class Home {
-  public countryList: CountryList;
-
+  public countryData = [];
+  
   constructor(private countryService: CountryService) {}
 
   public async handleRegionChange(region: Region) {
-    console.log("Region:", region);
-    this.countryList.loadCountriesByRegion(region);
+    console.log("home: handleRegionChange:", region);
+    this.countryData = await this.countryService.getCountriesByRegion(region);
   }
 }

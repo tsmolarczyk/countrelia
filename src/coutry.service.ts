@@ -5,13 +5,10 @@ export class CountryService {
 
   public async getCountriesByRegion(region: Region) {
     const response = await fetch(`${this.baseUrl}/region/${region}`);
-    const data = await response.json();
-    return data;
+    return await response.json();
   }
 
-  //   public async getAllRegions() {
-  //     const response = await fetch(`${this.baseUrl}/all?fields=region`);
-  //     const data = await response.json();
-  //     return data;
-  //   }
+  public async getInitialCountries() {
+    return this.getCountriesByRegion("Europe");
+  }
 }

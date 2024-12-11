@@ -1,14 +1,20 @@
-export class Filter {
-  regions = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
-  selectedRegion = "";
-  isOpen = false;
+import { bindable } from "aurelia-framework";
+import { Region, REGIONS } from "types/constants";
 
-  toggleDropdown() {
+export class Filter {
+  @bindable public onRegionChange: (region: Region) => void;
+
+  public regions = REGIONS;
+  public selectedRegion = "";
+  public isOpen = false;
+
+  private toggleDropdown() {
     this.isOpen = !this.isOpen;
   }
 
-  selectRegion(region) {
+  private selectRegion(region: Region) {
     this.selectedRegion = region;
     this.isOpen = false;
+    this.onRegionChange(region);
   }
 }

@@ -1,3 +1,8 @@
+import { CountryService } from "coutry.service";
+import { inject } from "aurelia-framework";
+import { REGIONS, Region } from "types/constants";
+
+@inject(CountryService)
 export class CountryList {
   public countryData = [
     {
@@ -45,8 +50,12 @@ export class CountryList {
   ];
   public countryDataa: any;
 
+  constructor(private countryService: CountryService) {}
+
   public async attached() {
     this.countryData = await this.getEuropeanCountries();
+    const africa: Region = REGIONS[0];
+    console.log(africa, "africa");
   }
 
   public async getEuropeanCountries() {
@@ -55,5 +64,9 @@ export class CountryList {
     );
     const data = await response.json();
     return data;
+  }
+
+  public async loadCountriesByRegion(region: Region) {
+    this.countryData = await this.countryService.getCountriesByRegion(region);
   }
 }

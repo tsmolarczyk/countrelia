@@ -6,7 +6,7 @@
 
   <navbar></navbar>
   <div class="flex w-full justify-between h-full my-5 mx-4">
-    <search-bar></search-bar>
+    <search-bar on-search.call="handleSearch($event)"></search-bar>
     <filter on-region-change.call="handleRegionChange($event)"></filter>
   </div>
   <country-list country-data.bind="countryData"></country-list>

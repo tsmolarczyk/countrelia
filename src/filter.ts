@@ -16,7 +16,7 @@ export class Filter {
     });
   }
 
-  private selectRegion(region: Region) {
+  public selectRegion(region: Region) {
     this.selectedRegion = region;
     this.setDropdownState(false);
     this.onRegionChange(region);
@@ -27,8 +27,7 @@ export class Filter {
     document.body.classList.toggle("pointer-events-none", isOpen);
   }
 
-  private toggleDropdown(event: MouseEvent) {
-    // event.stopPropagation();
+  public toggleDropdown(event: MouseEvent) {
     this.isOpen = !this.isOpen;
     this.setDropdownState(this.isOpen);
   }

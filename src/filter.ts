@@ -8,13 +8,28 @@ export class Filter {
   public selectedRegion = "";
   public isOpen = false;
 
-  private toggleDropdown() {
-    this.isOpen = !this.isOpen;
+  constructor() {
+    document.addEventListener("click", () => {
+      if (this.isOpen) {
+        this.setDropdownState(false);
+      }
+    });
   }
 
   private selectRegion(region: Region) {
     this.selectedRegion = region;
-    this.isOpen = false;
+    this.setDropdownState(false);
     this.onRegionChange(region);
+  }
+
+  private setDropdownState(isOpen: boolean) {
+    this.isOpen = isOpen;
+    document.body.classList.toggle("pointer-events-none", isOpen);
+  }
+
+  private toggleDropdown(event: MouseEvent) {
+    // event.stopPropagation();
+    this.isOpen = !this.isOpen;
+    this.setDropdownState(this.isOpen);
   }
 }

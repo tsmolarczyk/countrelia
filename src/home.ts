@@ -16,6 +16,10 @@ export class Home {
     );
   }
 
+  public async handleReset() {
+    this.handleSearch("");
+  }
+
   public async handleRegionChange(region: Region) {
     console.log("home: handleRegionChange:", region);
     this.countryData = await this.countryService.getCountriesByRegion(region);

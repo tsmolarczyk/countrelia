@@ -5,7 +5,7 @@ export class Filter {
   @bindable public onRegionChange: (region: Region) => void;
 
   public regions = REGIONS;
-  public selectedRegion = "";
+  public selectedRegion = "Europe";
   public isOpen = false;
 
   constructor() {

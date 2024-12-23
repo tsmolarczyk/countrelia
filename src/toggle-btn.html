@@ -1,0 +1,6 @@
+<template>
+  <button click.trigger="toggleMode()">
+    <div if.bind="isDarkMode"><i class="fa-solid fa-sun"></i> Light Mode</div>
+    <div if.bind="!isDarkMode"><i class="fas fa-moon"></i> Dark Mode</div>
+  </button>
+</template>

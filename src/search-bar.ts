@@ -12,4 +12,8 @@ export class SearchBar {
       this.onSearch(query);
     }
   }
+
+  public resetSearch() {
+    this.onSearch("");
+  }
 }

@@ -2,11 +2,11 @@
   <div class="flex items-center border rounded-lg px-4 py-2 w-72">
     <i class="fas fa-search text-gray-400"></i>
     <input
-      type="text"
-      placeholder="Search for a country..."
-      class="pl-3 outline-none border-none"
-      keyup.delegate="handleKeyUp($event)"
-    />
+           type="text"
+           placeholder="Search for a country..."
+           class="pl-3 outline-none border-none"
+           keyup.delegate="handleKeyUp($event)" />
   </div>
   <button click.trigger="resetSearch()" class="text-gray-400">Reset</button>
+  <button click.trigger="navigateToGrid()" class="text-gray-400">Grid</button>
 </template>

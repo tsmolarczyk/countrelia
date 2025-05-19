@@ -1,5 +1,5 @@
 import { bindable, inject } from 'aurelia-framework';
-import { CountryService } from 'coutry-service';
+import { CountryService } from 'country-service';
 
 @inject(CountryService)
 export class CountryList {

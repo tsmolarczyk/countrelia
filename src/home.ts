@@ -1,5 +1,5 @@
 import { inject } from 'aurelia-framework';
-import { CountryService } from './coutry-service';
+import { CountryService } from './country-service';
 import { Region } from './types/constants';
 
 @inject(CountryService)

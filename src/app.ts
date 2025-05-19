@@ -19,6 +19,7 @@ export class App {
         moduleId: PLATFORM.moduleName("home"),
         title: "Home",
       },
+      
       {
         route: "details",
         name: "details",

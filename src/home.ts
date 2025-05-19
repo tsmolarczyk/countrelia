@@ -1,27 +1,25 @@
-import { inject } from "aurelia-framework";
-import { CountryService } from "./coutry.service";
-import { Region } from "./types/constants";
+import { inject } from 'aurelia-framework';
+import { CountryService } from './coutry-service';
+import { Region } from './types/constants';
 
 @inject(CountryService)
 export class Home {
-  public countryData = [];
+    public countryData = [];
 
-  constructor(private countryService: CountryService) {}
+    constructor(private countryService: CountryService) {}
 
-  public async handleSearch(searchQuery: string) {
-    console.log("home: handleSearch:", searchQuery);
-    console.log(this.countryData);
-    this.countryData = await this.countryService.getCountriesByName(
-      searchQuery
-    );
-  }
+    public async handleSearch(searchQuery: string) {
+        console.log('home: handleSearch:', searchQuery);
+        console.log(this.countryData);
+        this.countryData = await this.countryService.getCountriesByName(searchQuery);
+    }
 
-  public async handleReset() {
-    this.handleSearch("");
-  }
+    public async handleReset() {
+        this.handleSearch('');
+    }
 
-  public async handleRegionChange(region: Region) {
-    console.log("home: handleRegionChange:", region);
-    this.countryData = await this.countryService.getCountriesByRegion(region);
-  }
+    public async handleRegionChange(region: Region) {
+        console.log('home: handleRegionChange:', region);
+        this.countryData = await this.countryService.getCountriesByRegion(region);
+    }
 }

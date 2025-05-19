@@ -1,0 +1,98 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "organizeImports": {
+        "enabled": false
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "complexity": {
+                "useLiteralKeys": "off",
+                "noVoid": "error",
+                "noExcessiveCognitiveComplexity": {
+                    "level": "error",
+                    "options": {
+                        "maxAllowedComplexity": 15
+                    }
+                }
+            },
+            "correctness": {
+                "noInvalidUseBeforeDeclaration": "warn",
+                "noUnusedVariables": "error",
+                "noUnusedPrivateClassMembers": "error",
+                "noUnusedImports": "error",
+                "noUnknownFunction": "off"
+            },
+            "style": {
+                "noRestrictedGlobals": "error",
+                "noDefaultExport": "error",
+                "noNonNullAssertion": "warn",
+                "noParameterProperties": "off",
+                "useImportType": "off",
+                "useShorthandAssign": "error",
+                "useShorthandArrayType": "error",
+                "useFilenamingConvention": {
+                    "level": "error",
+                    "options": {
+                        "strictCase": true,
+                        "requireAscii": true,
+                        "filenameCases": ["kebab-case"]
+                    }
+                },
+                "useNamingConvention": {
+                    "level": "error",
+                    "options": {
+                        "strictCase": false,
+                        "requireAscii": true,
+                        "enumMemberCase": "PascalCase"
+                    }
+                },
+                "useBlockStatements": "error"
+            },
+            "suspicious": {
+                "noEmptyBlockStatements": "warn",
+                "noExplicitAny": "warn",
+                "useAwait": "error",
+                "noSkippedTests": "warn",
+                "noConsoleLog": "error",
+                "noAssignInExpressions": "off"
+            },
+            "nursery": {
+                "useSortedClasses": "error"
+            },
+            "performance": {
+                "all": true
+            }
+        },
+        "ignore": ["**/*.js"]
+    },
+    "formatter": {
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "attributePosition": "multiline",
+        "enabled": true,
+        "formatWithErrors": true,
+        "lineEnding": "crlf"
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "trailingCommas": "none",
+            "bracketSameLine": true,
+            "arrowParentheses": "asNeeded",
+            "semicolons": "always"
+        },
+        "parser": {
+            "unsafeParameterDecoratorsEnabled": true
+        }
+    },
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "defaultBranch": "master"
+    }
+}
